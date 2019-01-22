@@ -1,0 +1,7 @@
+---
+applications:
+- name: MicroservicesUI
+  memory: 64M
+  instances: 1
+  buildpack: sdk-for-nodejs 
+  path: .
