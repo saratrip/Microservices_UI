@@ -35,10 +35,10 @@ app.post('/submitOrders', (req, res) => {
 
 app.get('/getOrders', (req, res) => {
     request.get({
-        url: `${orderServer}/rest/orders`
+        url: `${orderServer}/rest/ordersJson`
     }, (err,httpResponse,body) => {
-        const _body = body.split('<p>').filter(el => el).join(',')
-        res.json(JSON.parse(_body))
+        console.log('##### body - ', body)
+        res.json(JSON.parse(body))
     })
 })
 
