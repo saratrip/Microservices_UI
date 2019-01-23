@@ -4,6 +4,7 @@ const path = require('path')
 const app = express()
 const port = process.env.PORT || 3010
 console.log('#### process.env.VCAP_APPLICATION = ', process.env.VCAP_APPLICATION)
+console.log('#### process.env.VCAP_SERVICES = ', process.env.VCAP_SERVICES)
 const catalogServer = process.env.APP_URL.replace('-ui-', '-catalog-api-')
 const orderServer = process.env.APP_URL.replace('-ui-', '-orders-api-')
 const bodyParser = require('body-parser');
