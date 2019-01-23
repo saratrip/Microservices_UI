@@ -4,7 +4,7 @@
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.3/jquery.min.js"></script>
     <script>
     var RETRY_INTERVAL = 5000;
-    var customerId = Math.floor((Math.random() * 999) + 1);
+    var customerId = Math.floor((Math.random() * 9999999) + 1);
     function loadItems() {
         showErrorMessage("The catalog is not currently available, retrying...");
         $.ajax({
@@ -36,11 +36,11 @@
     }
 
     function orderItem(itemID) {
-        var count = Math.floor((Math.random() * 99) + 1);
+        var count = Math.floor((Math.random() * 9999) + 1);
         var myjson = { "itemid": itemID, "customerid": customerId, "count": count };
+        window.templateOrderData = { justOrdered: myjson };
         $.post('/submitOrders', myjson) 
         .done(function( data ) {
-            console.log('#### data - ', data)
             orderList()
             alert('Order placed!')
         })
@@ -51,7 +51,8 @@
             contentType: "application/json",
             url: "/getOrders",
             success: function(result) {
-                console.log(result)
+                window.templateOrderData = window.templateOrderData || {}
+                window.templateOrderData.orderList = result;                
             },
             error: function(XMLHttpRequest, textStatus, errorThrown) {
                 // reloadCatalog();
