@@ -7,8 +7,8 @@ const port = process.env.PORT || 3010
 console.log('#### process.env.APP_URL = ', process.env.APP_URL)
 console.log('#### process.env.VCAP_APPLICATION = ', process.env.VCAP_APPLICATION)
 const vcap = JSON.parse(process.env.VCAP_APPLICATION)
-const catalogServer = vcap.application_uris[0].replace('-ui-', '-catalog-api-')
-const orderServer = vcap.application_uris[0].replace('-ui-', '-orders-api-')
+const catalogServer = `http://${vcap.application_uris[0].replace('-ui-', '-catalog-api-')}`
+const orderServer = `http://${vcap.application_uris[0].replace('-ui-', '-orders-api-')}`
 const bodyParser = require('body-parser');
 
 app.use(bodyParser.json()); // support json encoded bodies
