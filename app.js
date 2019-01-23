@@ -1,11 +1,11 @@
 const express = require('express')
 const request = require('request')
 const path = require('path')
+const _ = require('lodash')
 const app = express()
 const port = process.env.PORT || 3010
-const vcap = JSON.parse(process.env.VCAP_APPLICATION)
-const catalogServer = `http://${vcap.application_uris[0].replace('-ui-', '-catalog-api-')}`
-const orderServer = `http://${vcap.application_uris[0].replace('-ui-', '-orders-api-')}`
+require('./utils/setenv')
+const { uiServer, catalogServer, orderServer } = global.doiUrls
 const bodyParser = require('body-parser');
 
 app.use(bodyParser.json()); // support json encoded bodies
@@ -35,7 +35,6 @@ app.post('/submitOrders', (req, res) => {
 
 app.get('/getOrders', (req, res) => {
     request.get(`${orderServer}/rest/ordersJson`, (err,httpResponse,body) => {
-        console.log('##### body - ', body)
         res.json(JSON.parse(body))
     })
 })
