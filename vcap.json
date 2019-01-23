@@ -1,0 +1,23 @@
+VCAP_APPLICATION = {
+  "application_id": "65ecdd0e-8017-4f87-8298-0e978ce9a504",
+  "application_name": "staging-ui-microservices-toolchain-20190116165744205",
+  "port": 80,
+  "application_uris": [
+   "staging-ui-microservices-toolchain-20190116165744205.mybluemix.net"
+  ],
+  "application_version": "9f52ccc4-d794-404f-a0ca-6a01518d14bd",
+  "cf_api": "https://api.ng.bluemix.net",
+  "limits": {
+   "disk": 1024,
+   "fds": 16384,
+   "mem": 64
+  },
+  "name": "staging-ui-microservices-toolchain-20190116165744205",
+  "space_id": "d4a37451-5631-4d83-abd2-c41f7d0a8515",
+  "space_name": "dev",
+  "uris": [
+   "staging-ui-microservices-toolchain-20190116165744205.mybluemix.net"
+  ],
+  "users": null,
+  "version": "9f52ccc4-d794-404f-a0ca-6a01518d14bd"
+ }
