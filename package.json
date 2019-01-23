@@ -6,6 +6,7 @@
   "scripts": {
     "unittest": "./node_modules/.bin/mocha test/unittest --reporter xunit --reporter-options output=test/mocha-unittest.xml",
     "coverage": "./node_modules/istanbul/lib/cli.js cover utils/converter.js --report json-summary --report lcov --handle-sigint",
+    "fvt": "./node_modules/nightwatch/bin/nightwatch test/fvt/item.list.js  --output=test/fvt",
     "start": "node app.js"
   },
   "author": "",
@@ -13,11 +14,14 @@
   "dependencies": {
     "body-parser": "^1.18.3",
     "chai": "^4.2.0",
+    "chromedriver": "^2.45.0",
     "express": "^4.16.4",
     "grunt": "^1.0.3",
     "grunt-idra3": "^0.1.37",
     "istanbul": "^0.4.5",
+    "lodash": "^4.17.11",
     "mocha": "^5.2.0",
+    "nightwatch": "^1.0.18",
     "request": "^2.88.0"
   }
 }
