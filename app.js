@@ -3,6 +3,7 @@ const request = require('request')
 const path = require('path')
 const app = express()
 const port = process.env.PORT || 3010
+console.log('#### process.env = ', process.env)
 console.log('#### process.env.APP_URL = ', process.env.APP_URL)
 const catalogServer = process.env.APP_URL.replace('-ui-', '-catalog-api-')
 const orderServer = process.env.APP_URL.replace('-ui-', '-orders-api-')
