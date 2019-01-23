@@ -4,7 +4,7 @@
   "description": "",
   "main": "index.js",
   "scripts": {
-    "test": "./node_modules/.bin/mocha --reporter xunit --reporter-options output=test/mocha-unittest.xml",
+    "unittest": "./node_modules/.bin/mocha test/unittest --reporter xunit --reporter-options output=test/mocha-unittest.xml",
     "coverage": "./node_modules/istanbul/lib/cli.js cover utils/converter.js --report json-summary --report lcov --handle-sigint",
     "start": "node app.js"
   },
@@ -17,7 +17,6 @@
     "grunt": "^1.0.3",
     "grunt-idra3": "^0.1.37",
     "istanbul": "^0.4.5",
-    "jest": "^23.6.0",
     "mocha": "^5.2.0",
     "request": "^2.88.0"
   }
