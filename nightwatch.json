@@ -2,7 +2,7 @@
   "src_folders" : ["test/fvt"],
   "selenium" : {
     "start_process" : true,
-    "server_path" : "test/selenium-server-standalone-3.10.0.jar",
+    "server_path" : "test/selenium-server-standalone-3.0.0.jar",
     "log_path" : "logs",
     "port" : 4444,
     "cli_args" : {
