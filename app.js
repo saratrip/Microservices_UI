@@ -1,12 +1,12 @@
+const _ = require('lodash')
 const express = require('express')
 const request = require('request')
 const path = require('path')
-const _ = require('lodash')
 const app = express()
+const bodyParser = require('body-parser');
 const port = process.env.PORT || 3010
 require('./utils/setenv')
 const { uiServer, catalogServer, orderServer } = global.doiUrls
-const bodyParser = require('body-parser');
 
 app.use(bodyParser.json()); // support json encoded bodies
 app.use(bodyParser.urlencoded({
