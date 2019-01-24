@@ -1,5 +1,5 @@
 module.exports = {
-  'Demo test Google' : function (client) {
+  'Item List Test' : function (client) {
     require('../../utils/setenv')
     console.log('#### global.doiUrls = ', global.doiUrls)
     client
