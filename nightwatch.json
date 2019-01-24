@@ -5,6 +5,7 @@
     "server_path" : "test/selenium-server-standalone-2.53.0.jar",
     "log_path" : "logs",
     "port" : 4444,
+    "host": "localhost",
     "cli_args" : {
      "webdriver.chrome.driver" : "node_modules/.bin/chromedriver"
     }
