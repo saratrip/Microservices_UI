@@ -20,16 +20,15 @@ const assert = require('assert');
 const {Builder, By, Key, until} = webdriver;
 
 describe('Item List Test', function () {
-    it('Item List Test - first item', function() {
-        const driver = new webdriver.Builder()
-            .withCapabilities(webdriver.Capabilities.chrome())
-            .build();
-      driver.get(global.microserviceUrls.uiServer);
-      driver.wait(until.titleIs('Microservices Sample - 8 items'), 5000);
-      driver.quit();
-      
-    })
-    
+  it('Item List Test - 8 items', function() {
+    const driver = new webdriver.Builder().withCapabilities(webdriver.Capabilities.chrome()).build()
+    driver.get(global.microserviceUrls.uiServer)
+    driver.wait(until.titleIs('Microservices Sample - 8 items'), 5000)
+    driver.quit()
+    // driver.executeScript('return document.title').then(function(return_value) {
+    //   console.log('####### return_value = ', return_value)
+    //   assert.equal(return_value, 'Microservices Sample - 8 items')
+    //   driver.quit()
+    // })        
+  })
 })
-
-
