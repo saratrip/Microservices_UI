@@ -6,7 +6,8 @@
   "scripts": {
     "unittest": "./node_modules/.bin/mocha test/unittest --reporter xunit --reporter-options output=test/mocha-unittest.xml",
     "coverage": "./node_modules/istanbul/lib/cli.js cover utils/converter.js --report json-summary --report lcov --handle-sigint",
-    "fvt": "./node_modules/nightwatch/bin/nightwatch test/fvt/item.list.js  --output=test/fvt",
+    "_fvt": "./node_modules/nightwatch/bin/nightwatch test/fvt/item.list.js  --output=test/fvt",
+    "fvt": "./node_modules/mocha/bin/mocha --recursive --timeout 10000 test.js --reporter xunit --reporter-options output=test/fvt/mocha-fvt.xml",
     "start": "node app.js"
   },
   "author": "",
@@ -22,6 +23,7 @@
     "lodash": "^4.17.11",
     "mocha": "^5.2.0",
     "nightwatch": "^1.0.18",
-    "request": "^2.88.0"
+    "request": "^2.88.0",
+    "selenium-webdriver": "^4.0.0-alpha.1"
   }
 }
