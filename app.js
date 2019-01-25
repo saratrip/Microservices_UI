@@ -6,7 +6,7 @@ const app = express()
 const bodyParser = require('body-parser');
 const port = process.env.PORT || 3010
 require('./utils/setenv')
-const { uiServer, catalogServer, orderServer } = global.doiUrls
+const { uiServer, catalogServer, orderServer } = global.microserviceUrls
 
 app.use(bodyParser.json()); // support json encoded bodies
 app.use(bodyParser.urlencoded({
