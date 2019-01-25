@@ -5,4 +5,5 @@ const uiServer = `http://${_.get(vcap, ['application_uris',0], defaultUI)}`
 const catalogServer = uiServer.replace('-ui-', '-catalog-api-')
 const orderServer = uiServer.replace('-ui-', '-orders-api-')
 const bodyParser = require('body-parser');
-global.doiUrls = { uiServer, catalogServer, orderServer }
+global.microserviceUrls = { uiServer, catalogServer, orderServer }
+console.log('#### global.microserviceUrls = ', global.microserviceUrls)

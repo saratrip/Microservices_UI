@@ -1,3 +1,4 @@
+require('./utils/setenv');
 require('chromedriver');
 const assert = require('assert');
 const {Builder, By, Key, until} = require('selenium-webdriver');
