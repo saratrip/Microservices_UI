@@ -5,6 +5,7 @@
     <script>
     var RETRY_INTERVAL = 5000;
     var customerId = Math.floor((Math.random() * 9999999) + 1);
+    var NUMBER_OF_ITEMS = 0;
     function loadItems() {
         showErrorMessage("The catalog is not currently available, retrying...");
         $.ajax({
@@ -17,6 +18,9 @@
                 for (i = 0; i < result.rows.length; ++i) {
                     addItem(result.rows[i].doc);
                 }
+                NUMBER_OF_ITEMS = result.rows.length;
+                $('#totalNumberOfItem').html(NUMBER_OF_ITEMS)
+                document.title = document.title + ' - ' + NUMBER_OF_ITEMS + ' items' 
             },
             error: function(XMLHttpRequest, textStatus, errorThrown) {
                 // reloadCatalog();
@@ -76,6 +80,7 @@
     <div class="container">
         <div id="boxes" class="notes"></div>
     </div>
+    <div id="totalNumberOfItem">Loading</div>
     <div id="loading"></div>
     <!-- <a href="./autoLoadTest.html">Catalog Load Tester</a> -->
 </body>

@@ -6,4 +6,3 @@ const catalogServer = uiServer.replace('-ui-', '-catalog-api-')
 const orderServer = uiServer.replace('-ui-', '-orders-api-')
 const bodyParser = require('body-parser');
 global.microserviceUrls = { uiServer, catalogServer, orderServer }
-console.log('#### global.microserviceUrls = ', global.microserviceUrls)

@@ -12,24 +12,24 @@
 //       .end();
 //   }
 // }
-
+ 
+require('../../utils/setenv')
 require('chromedriver');
-require('../../utils/setenv');
+const webdriver = require('selenium-webdriver');
 const assert = require('assert');
-const {Builder, By, Key, until} = require('selenium-webdriver');
+const {Builder, By, Key, until} = webdriver;
 
-describe('Checkout Google.com', function () {
-    it('Search on Google', function() {
-
-        let driver = new Builder()
-            .forBrowser('chrome')
+describe('Item List Test', function () {
+    it('Item List Test - first item', function() {
+        const driver = new webdriver.Builder()
+            .withCapabilities(webdriver.Capabilities.chrome())
             .build();
-        
-        driver.get(global.microserviceUrls);
-        driver.findElement(By.name('q')).sendKeys('webdriver', Key.RETURN);
-        driver.wait(until.titleIs('webdriver - Google Search'), 1000);
-        driver.quit();
-        
+      driver.get(global.microserviceUrls.uiServer);
+      driver.wait(until.titleIs('Microservices Sample - 8 items'), 5000);
+      driver.quit();
+      
     })
     
 })
+
+
