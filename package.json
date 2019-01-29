@@ -4,7 +4,7 @@
   "description": "",
   "main": "index.js",
   "scripts": {
-    "unittest": "./node_modules/.bin/mocha test/unittest --reporter xunit --reporter-options output=test/mocha-unittest.xml",
+    "unittest": "./node_modules/mocha/bin/mocha test/unittest --reporter xunit --reporter-options output=test/mocha-unittest.xml",
     "coverage": "./node_modules/istanbul/lib/cli.js cover utils/converter.js --report json-summary --report lcov --handle-sigint",
     "fvt": "./node_modules/mocha/bin/mocha --recursive --timeout 10000 test/fvt/item.list.js --reporter xunit --reporter-options output=test/fvt/mocha-fvt.xml",
     "start": "node app.js"
